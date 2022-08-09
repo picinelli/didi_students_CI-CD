@@ -8,11 +8,11 @@ jobs:
         uses: actions/checkout@v3
       - name: Make a new envfile
         uses: SpicyPizza/create-envfile@v1
-          with:
-            envkey_POSTGRES_USER: "postgres"
-            envkey_POSTGRES_PASSWORD: "postgres"
-            envkey_POSTGRES_DB: "students__tests"
-            envkey_POSTGRES_URL: "postgresql://postgres:postgres@db_didi_test:5432/students__tests"
-            file_name: .env.test
+        with:
+          envkey_POSTGRES_USER: "postgres"
+          envkey_POSTGRES_PASSWORD: "postgres"
+          envkey_POSTGRES_DB: "students__tests"
+          envkey_POSTGRES_URL: "postgresql://postgres:postgres@db_didi_test:5432/students__tests"
+          file_name: .env.test
       - name: Run tests
         run: docker-compose -f docker-compose-test.yml run node_app npm run test
